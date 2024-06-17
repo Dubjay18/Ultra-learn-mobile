@@ -31,15 +31,15 @@ export function useThemeColor(
 }
 
 export function Text(props: TextProps) {
-  const { style, lightColor, darkColor, ...otherProps } = props;
+  const { style,className, lightColor, darkColor, ...otherProps } = props;
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
-
-  return <DefaultText style={[{ color }, style]} {...otherProps} />;
+  const theme = useColorScheme() ?? 'light';
+  return <DefaultText style={[{ color }, style]} className={`${theme == "light"? "text-black":"text-white"} ${className}`} {...otherProps} />;
 }
 
 export function View(props: ViewProps) {
-  const { style, lightColor, darkColor, ...otherProps } = props;
+  const { style,className, lightColor, darkColor, ...otherProps } = props;
   const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
-
-  return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
+  const theme = useColorScheme() ?? 'light';
+  return <DefaultView style={[ style]} className={`${theme == "light"? "bg-background":"bg-background-dark"} ${className}`} {...otherProps} />;
 }
