@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Onboarding from "react-native-onboarding-swiper";
 import CustomButton from "@/components/ui/CustomButton";
+import { router } from "expo-router";
 
 var { width, height } = Dimensions.get("window");
 export default function ModalScreen() {
@@ -22,7 +23,11 @@ export default function ModalScreen() {
       <CustomButton
         {...props}
         title={"Sign up"}
-        onPress={() => console.log("jdshnfj")}
+        onPress={() =>
+          router.push({
+            pathname: "/signup",
+          })
+        }
       />
 
       <CustomButton
@@ -65,6 +70,10 @@ export default function ModalScreen() {
   const Skip = ({ isLight, ...props }: { isLight: boolean; props: any }) => {
     return (
       <TouchableOpacity
+        {...props}
+        onPress={() => {
+          onboardingRef?.current?.flatList?.scrollToEnd();
+        }}
         className={`absolute `}
         style={{
           top: -height + 100,
