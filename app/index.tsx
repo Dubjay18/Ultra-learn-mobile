@@ -6,6 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Onboarding from "react-native-onboarding-swiper";
 import CustomButton from "@/components/ui/CustomButton";
 import { router } from "expo-router";
+import { BoldText, RegularText } from "@/components/StyledText";
 
 var { width, height } = Dimensions.get("window");
 export default function ModalScreen() {
@@ -29,7 +30,6 @@ export default function ModalScreen() {
           })
         }
       />
-
       <CustomButton
         {...props}
         title={"Login"}
@@ -112,32 +112,35 @@ export default function ModalScreen() {
             backgroundColor: background,
             image: <Image source={require("../assets/images/onboard-1.png")} />,
             title: (
-              <Text
-                className={"font-bold text-xl underline"}
+              <BoldText
+                className={"font-bold text-xl "}
                 style={{
                   fontSize: 26,
                   fontWeight: "bold",
                 }}
               >
                 Numerous free trial courses
-              </Text>
+              </BoldText>
             ),
-            subtitle:
-              "Free courses for you to \n" + "find your way to learning",
+            subtitle: (
+              <RegularText>
+                Free courses for you to find your way to learning
+              </RegularText>
+            ),
           },
           {
             backgroundColor: background,
             image: <Image source={require("../assets/images/onboard-2.png")} />,
             title: (
-              <Text
-                className={"font-bold text-xl underline"}
+              <BoldText
+                className={"font-bold text-xl "}
                 style={{
                   fontSize: 26,
                   fontWeight: "bold",
                 }}
               >
                 Quick and easy learning
-              </Text>
+              </BoldText>
             ),
             subtitle:
               "Easy and fast learning at any time to help you improve various skills",
@@ -147,7 +150,7 @@ export default function ModalScreen() {
             image: <Image source={require("../assets/images/onboard-3.png")} />,
             title: (
               <Text
-                className={"font-bold text-xl underline"}
+                className={"font-bold text-xl "}
                 style={{
                   fontSize: 26,
                   fontWeight: "bold",
