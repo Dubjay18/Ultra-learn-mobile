@@ -29,7 +29,7 @@ export default function RootLayout() {
   const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     Poppins: require("../assets/fonts/Poppins-Regular.ttf"),
-    "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
+    PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
     ...FontAwesome.font,
   });
 
@@ -60,6 +60,12 @@ function RootLayoutNav() {
         />
         <Stack.Screen
           name="signup"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="login"
           options={{
             headerShown: false,
           }}

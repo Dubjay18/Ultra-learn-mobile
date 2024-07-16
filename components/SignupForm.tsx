@@ -55,7 +55,7 @@ const SignupForm = () => {
           onValueChange={() => {
             setChecked(!checked);
           }}
-          className={" rounded-lg"}
+          className={" rounded checked:bg-primary"}
         />
         <Text className={"text-[#858597] text-lg"}>
           By creating an account you have to agree with our them & condication.

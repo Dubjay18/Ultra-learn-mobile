@@ -5,7 +5,7 @@ import SignupForm from "@/components/SignupForm";
 import { BoldText } from "@/components/StyledText";
 
 var { width, height } = Dimensions.get("window");
-export default function SignupScreen() {
+export default function LoginScreen() {
   const backgroundColor = useThemeColor({}, "background");
   return (
     <SafeAreaView
@@ -24,13 +24,9 @@ export default function SignupScreen() {
             marginTop: height / 12,
           }}
         >
-          Sign Up
+          Login
         </BoldText>
-        <Text className={"text-gray-500"}>
-          Enter your details below & free sign up
-        </Text>
       </View>
-      <SignupForm />
     </SafeAreaView>
   );
 }

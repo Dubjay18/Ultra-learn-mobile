@@ -10,12 +10,10 @@ export function MonoText(props: TextProps & cutomTextProps) {
 
 export function BoldText(props: TextProps & cutomTextProps) {
   return (
-    <Text {...props} style={[props.style, { fontFamily: "Poppins-Bold" }]} />
+    <Text {...props} style={[props.style, { fontFamily: "PoppinsBold" }]} />
   );
 }
 
 export function RegularText(props: TextProps & cutomTextProps) {
-  return (
-    <Text {...props} style={[props.style, { fontFamily: "Poppins-Regular" }]} />
-  );
+  return <Text {...props} style={[props.style, { fontFamily: "Poppins" }]} />;
 }

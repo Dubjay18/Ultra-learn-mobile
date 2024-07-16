@@ -34,7 +34,11 @@ export default function ModalScreen() {
         {...props}
         title={"Login"}
         variant={"secondary"}
-        onPress={() => console.log("jdshnfj")}
+        onPress={() =>
+          router.push({
+            pathname: "/login",
+          })
+        }
       />
     </View>
   );
@@ -123,7 +127,7 @@ export default function ModalScreen() {
               </BoldText>
             ),
             subtitle: (
-              <RegularText>
+              <RegularText className="max-w-md px-10 text-center">
                 Free courses for you to find your way to learning
               </RegularText>
             ),
@@ -142,14 +146,18 @@ export default function ModalScreen() {
                 Quick and easy learning
               </BoldText>
             ),
-            subtitle:
-              "Easy and fast learning at any time to help you improve various skills",
+            subtitle: (
+              <RegularText className="max-w-md px-10 text-center">
+                Easy and fast learning at any time to help you improve various
+                skills
+              </RegularText>
+            ),
           },
           {
             backgroundColor: background,
             image: <Image source={require("../assets/images/onboard-3.png")} />,
             title: (
-              <Text
+              <BoldText
                 className={"font-bold text-xl "}
                 style={{
                   fontSize: 26,
@@ -157,11 +165,13 @@ export default function ModalScreen() {
                 }}
               >
                 Create your own study plan
-              </Text>
+              </BoldText>
             ),
-            subtitle:
-              "Study according to the study plan, make study \n" +
-              "more motivated",
+            subtitle: (
+              <RegularText className="max-w-md px-10 text-center">
+                Study according to the study plan, make study more motivated
+              </RegularText>
+            ),
           },
         ]}
       />
