@@ -1,4 +1,5 @@
 import { Text, TouchableOpacity } from "react-native";
+import { BoldText } from "../StyledText";
 
 type ButtonVariant = "primary" | "secondary";
 type ButtonSize = "lg" | "md" | "sm";
@@ -30,11 +31,11 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       disabled={disabled}
       onPress={onPress}
     >
-      <Text
+      <BoldText
         className={`${variant == "primary" && "text-white"} ${variant == "secondary" && "text-primary"} text-center text-lg`}
       >
         {title}
-      </Text>
+      </BoldText>
     </TouchableOpacity>
   );
 };

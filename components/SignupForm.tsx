@@ -1,16 +1,17 @@
 import React from "react";
-import { Text, TextInput, View } from "react-native";
+import { KeyboardAvoidingView, Text, TextInput, View } from "react-native";
 import { useThemeColor } from "@/components/Themed";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import CustomButton from "@/components/ui/CustomButton";
 import Checkbox from "expo-checkbox";
-import { RegularText } from "@/components/StyledText";
+import { BoldText, RegularText } from "@/components/StyledText";
+import { Link } from "expo-router";
 
 const SignupForm = () => {
   const backgroundColor = useThemeColor({}, "tintBackground");
   const [checked, setChecked] = React.useState(false);
   return (
-    <View
+    <KeyboardAvoidingView
       className={"rounded-t-xl p-5 mt-2"}
       style={{
         backgroundColor,
@@ -57,11 +58,21 @@ const SignupForm = () => {
           }}
           className={" rounded checked:bg-primary"}
         />
-        <Text className={"text-[#858597] text-lg"}>
+        <RegularText className={"text-[#858597] text-lg"}>
           By creating an account you have to agree with our them & condication.
-        </Text>
+        </RegularText>
       </View>
-    </View>
+      <View className="flex-row mx-auto mt-5">
+        <RegularText className={"text-[#858597] text-lg"}>
+          Don't have an account?{" "}
+        </RegularText>
+        <Link href="/login">
+          <BoldText className={"text-primary text-lg underline"}>
+            Log in
+          </BoldText>
+        </Link>
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 

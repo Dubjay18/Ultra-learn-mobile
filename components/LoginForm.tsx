@@ -5,6 +5,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import CustomButton from "@/components/ui/CustomButton";
 import Checkbox from "expo-checkbox";
 import { RegularText } from "@/components/StyledText";
+import { Link } from "expo-router";
 
 const LoginForm = () => {
   const backgroundColor = useThemeColor({}, "tintBackground");
@@ -54,6 +55,14 @@ const LoginForm = () => {
         />
       </View>
       <View className={"h-10"} />
+      <View className="flex-row mx-auto">
+        <RegularText className={"text-[#858597] text-lg"}>
+          Don't have an account?
+        </RegularText>
+        <Link href="/signup">
+          <RegularText className={"text-primary text-lg"}>Sign up</RegularText>
+        </Link>
+      </View>
     </View>
   );
 };
