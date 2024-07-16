@@ -3,6 +3,7 @@ import { Text, useThemeColor } from "@/components/Themed";
 import { Dimensions, View } from "react-native";
 import SignupForm from "@/components/SignupForm";
 import { BoldText } from "@/components/StyledText";
+import LoginForm from "@/components/LoginForm";
 
 var { width, height } = Dimensions.get("window");
 export default function LoginScreen() {
@@ -27,6 +28,7 @@ export default function LoginScreen() {
           Login
         </BoldText>
       </View>
+      <LoginForm />
     </SafeAreaView>
   );
 }
