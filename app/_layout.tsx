@@ -5,7 +5,7 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { router, Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
@@ -32,6 +32,7 @@ export default function RootLayout() {
     PoppinsBold: require("../assets/fonts/Poppins-Bold.ttf"),
     ...FontAwesome.font,
   });
+  const authenticated = true;
 
   useEffect(() => {
     if (loaded || error) {
@@ -43,12 +44,17 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
+  return <AuthLayout />;
 }
 
-function RootLayoutNav() {
+function AuthLayout() {
   const colorScheme = useColorScheme();
-
+  const authenticated = true;
+  useEffect(() => {
+    if (authenticated) {
+      router.push("/main");
+    }
+  }, [authenticated]);
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
@@ -66,6 +72,12 @@ function RootLayoutNav() {
         />
         <Stack.Screen
           name="login"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="main"
           options={{
             headerShown: false,
           }}

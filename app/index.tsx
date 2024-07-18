@@ -18,11 +18,12 @@ export default function ModalScreen() {
     <View
       className={"flex-row  justify-between  mx-2 "}
       style={{
-        width: width - 20,
+        width: width - 10,
       }}
     >
       <CustomButton
         {...props}
+        className="mx-1"
         title={"Sign up"}
         onPress={() =>
           router.push({
@@ -32,6 +33,7 @@ export default function ModalScreen() {
       />
       <CustomButton
         {...props}
+        className="mx-1"
         title={"Login"}
         variant={"secondary"}
         onPress={() =>
