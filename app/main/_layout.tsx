@@ -4,18 +4,18 @@ import {
   DefaultTheme,
   ThemeProvider,
 } from "@react-navigation/native";
-import { Stack, Tabs } from "expo-router";
+import { Tabs } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
 import "react-native-reanimated";
 
+import { BoldText, RegularText } from "@/components/StyledText";
 import { useColorScheme } from "@/components/useColorScheme";
-import { BoldText } from "@/components/StyledText";
-import { View } from "react-native";
+import useDimensions from "@/hooks/useDimensions";
+import { Image, View } from "react-native";
 
 export {
   // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
+  ErrorBoundary
 } from "expo-router";
 
 export const unstable_settings = {
@@ -28,6 +28,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
+  const dimensions = useDimensions();
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
@@ -39,11 +40,79 @@ export default function RootLayout() {
         <Tabs.Screen
           name="index"
           options={{
+            headerStyle: {
+              backgroundColor: "transparent",
+              height: dimensions.height / 5,
+            },
+            headerBackgroundContainerStyle: {
+              backgroundColor: "transparent",
+            },
+            header: () => {
+              return (<View className="bg-primary">
+
+                <View className="flex-row items-center justify-between" style={{
+                      height: dimensions.height / 5,
+                }}>
+              <View className="mx-3 ">
+                  <BoldText className="text-xl text-white">
+                    Hi, Kristern
+                  </BoldText>
+                  <RegularText className="text-white">
+                    Let's start learning
+                  </RegularText>
+              
+                </View>
+           
+                <View className="mx-3 ">
+                <Image
+                  source={require("../../assets/images/profile.png")}
+           
+                  />
+                  </View>
+                </View>
+                <View className="rounded-lg bg-white z-[1] py-4 px-3 absolute -bottom-20 left-[10%]"
+      style={
+        {
+          height: dimensions.height / 7,
+         width: dimensions.width /1.2
+        }
+      }>
+        <View className="flex-row justify-between items-center mx-3">
+            <RegularText>Learned Today</RegularText>
+              <RegularText className="text-primary">My courses</RegularText>
+        </View>
+        <View className="flex-row items-center">
+        <BoldText className="text-2xl">46mins</BoldText>
+        <RegularText className="text-gray-500 text-sm"> / ^0mins</RegularText>
+        </View>
+      </View>
+              </View>
+              );
+            },
             headerBackground: () => {
               return <BoldText className="bg-primary h-full" />;
             },
             headerLeft: () => {
-              return <BoldText className="mx-2 text-white">Home</BoldText>;
+              return (
+                <View className="mx-3 ">
+                  <BoldText className="text-xl text-white">
+                    Hi, Kristern
+                  </BoldText>
+                  <RegularText className="text-white">
+                    Let's start learning
+                  </RegularText>
+                </View>
+              );
+            },
+            headerRight : () => {
+              return (
+                <View className="mx-3 ">
+                <Image
+                  source={require("../../assets/images/profile.png")}
+           
+                  />
+                  </View>
+              )
             },
             title: "",
             tabBarIcon: ({ color, size }) => (
