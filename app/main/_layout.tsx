@@ -12,6 +12,7 @@ import { BoldText, RegularText } from "@/components/StyledText";
 import { useColorScheme } from "@/components/useColorScheme";
 import useDimensions from "@/hooks/useDimensions";
 import { Image, View } from "react-native";
+import TabBar from "@/components/TabBar";
 
 export {
 	// Catch any errors thrown by the Layout component.
@@ -36,10 +37,12 @@ export default function RootLayout() {
 				screenOptions={{
 					headerShadowVisible: false,
 				}}
+				tabBar={(props) => <TabBar {...props} />}
 			>
 				<Tabs.Screen
 					name="index"
 					options={{
+						title: "Home",
 						headerStyle: {
 							backgroundColor: "transparent",
 							height: dimensions.height / 5,
@@ -47,6 +50,7 @@ export default function RootLayout() {
 						headerBackgroundContainerStyle: {
 							backgroundColor: "transparent",
 						},
+						tabBarLabel: "Home",
 						header: () => {
 							return (
 								<View className="bg-primary">
@@ -117,7 +121,6 @@ export default function RootLayout() {
 								</View>
 							);
 						},
-						title: "",
 						tabBarIcon: ({ color, size }) => (
 							<FontAwesome name="home" color={color} size={size} />
 						),
