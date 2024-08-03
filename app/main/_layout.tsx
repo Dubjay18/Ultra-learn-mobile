@@ -81,9 +81,9 @@ export default function RootLayout() {
             <RegularText>Learned Today</RegularText>
               <RegularText className="text-primary">My courses</RegularText>
         </View>
-        <View className="flex-row items-center">
-        <BoldText className="text-2xl">46mins</BoldText>
-        <RegularText className="text-gray-500 text-sm"> / ^0mins</RegularText>
+         <View className="flex-row items-center">
+                  <BoldText className="text-2xl">46mins</BoldText>
+                  <RegularText className="text-gray-500 text-sm"> / 60mins</RegularText>
         </View>
       </View>
               </View>

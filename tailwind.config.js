@@ -8,11 +8,18 @@ module.exports = {
         background: {
           DEFAULT: "#F0F0F0",
           dark: "#1F1F39",
+          foreground: "#FFFF",
         },
-      },
-      secondary: {
-        DEFAULT: "#E2E2D5",
-        dark: "#888883",
+        secondary: {
+          DEFAULT: "#E2E2D5",
+          dark: "#888883",
+          foreground: "#F0F0F0",
+        },
+        accent:{
+          DEFAULT: "#FF6905",
+          dark: "#FF3D5C",
+          foreground: "#FFFF",
+        }
       },
     },
     fontFamily: {
