@@ -13,6 +13,7 @@ import { useColorScheme } from "@/components/useColorScheme";
 import useDimensions from "@/hooks/useDimensions";
 import { Image, View } from "react-native";
 import TabBar from "@/components/TabBar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export {
 	// Catch any errors thrown by the Layout component.
@@ -124,6 +125,73 @@ export default function RootLayout() {
 						tabBarIcon: ({ color, size }) => (
 							<FontAwesome name="home" color={color} size={size} />
 						),
+					}}
+				/>
+				<Tabs.Screen
+					name="course"
+					options={{
+						title: "Course",
+						headerStyle: {
+							backgroundColor: "transparent",
+							height: dimensions.height / 5,
+						},
+						header: () => {
+							return (
+								<SafeAreaView className="flex-row bg-white justify-between items-center">
+									<View className="mx-3 ">
+										<BoldText className="text-xl ">Course</BoldText>
+									</View>
+									<View className="mx-3 ">
+										<Image
+											source={require("../../assets/images/profile.png")}
+										/>
+									</View>
+								</SafeAreaView>
+							);
+						},
+					}}
+				/>
+				<Tabs.Screen
+					name="message"
+					options={{
+						title: "Message",
+						headerStyle: {
+							backgroundColor: "transparent",
+							height: dimensions.height / 5,
+						},
+						header: () => {
+							return (
+								<SafeAreaView className="flex-row bg-white justify-between items-center">
+									<View className="mx-3 ">
+										<BoldText className="text-xl ">Message</BoldText>
+									</View>
+									<View className="mx-3 ">
+										<Image
+											source={require("../../assets/images/profile.png")}
+										/>
+									</View>
+								</SafeAreaView>
+							);
+						},
+					}}
+				/>
+				<Tabs.Screen
+					name="account"
+					options={{
+						title: "Account",
+						headerStyle: {
+							backgroundColor: "transparent",
+							height: dimensions.height / 5,
+						},
+						header: () => {
+							return (
+								<SafeAreaView className="flex-row bg-white justify-between items-center pt-10">
+									<View className="mx-3 ">
+										<BoldText className="text-2xl ">Account</BoldText>
+									</View>
+								</SafeAreaView>
+							);
+						},
 					}}
 				/>
 			</Tabs>

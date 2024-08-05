@@ -20,7 +20,18 @@ export default function TabBar({
 
 	return (
 		<View
-			style={{ flexDirection: "row", backgroundColor: background }}
+			style={{
+				flexDirection: "row",
+				backgroundColor: background,
+				shadowColor: "#000",
+				shadowOffset: {
+					width: 0,
+					height: 2,
+				},
+				shadowOpacity: 0.25,
+				shadowRadius: 3.84,
+				elevation: 5,
+			}}
 			className="px-2 py-5"
 		>
 			{state.routes.map((route, index) => {
