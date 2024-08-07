@@ -1,4 +1,4 @@
-import CategoryCard from "@/components/CategoryCard";
+import CategoryCard, { CategoryCardVariant } from "@/components/CategoryCard";
 import { RegularText } from "@/components/StyledText";
 import { useThemeColor } from "@/components/Themed";
 import { Input } from "@/components/ui/input";
@@ -31,8 +31,9 @@ export default function Course() {
 					<Feather name="sliders" size={24} color="#B8B8D2" />
 				</View>
 			</View>
-			<ScrollView horizontal={true}>
+			<ScrollView horizontal={true} className="flex-[0.29] my-7">
 				<CategoryCard />
+				<CategoryCard variant={CategoryCardVariant.SECONDARY} />
 			</ScrollView>
 			<RegularText>Coure</RegularText>
 		</View>

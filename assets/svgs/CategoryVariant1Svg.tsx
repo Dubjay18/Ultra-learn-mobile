@@ -1,8 +1,8 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 const CategoryVariant1Svg = ({
-	width = 110,
-	height = 108,
+	width = 210,
+	height = 208,
 	fill = "none",
 	...props
 }: {
